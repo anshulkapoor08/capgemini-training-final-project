@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk # type: ignore
 import subprocess
 
 # Function to handle login
@@ -21,8 +21,10 @@ root.title("Login System")
 root.geometry("800x500")
 root.state("normal")
 
+
+
 frame = tk.Frame(root, bg="#ffffff", bd=5, relief="ridge")
-frame.place(relx=0.5, rely=0.5, anchor="center", relwidth=0.5, relheight=0.5)  # 50% of window size
+frame.place(relx=0.5, rely=0.5, anchor="center", width=400, height=250)  # 50% of window size
 
 # Load and display icons
 user_icon = Image.open("user.png")
@@ -56,7 +58,7 @@ entry_password.grid(row=1, column=2, padx=10, pady=10)
 # Login Button
 button_login = tk.Button(frame, text="Login", font=("Arial", 12, "bold"), bg="#008CBA", fg="white", 
                          width=15, command=login, relief="raised")
-button_login.grid(row=2, column=1, columnspan=2, pady=15)
+button_login.grid(row=2, column=1, columnspan=2, pady=50)
 
 # Keep image references to prevent garbage collection
 label_user_icon.image = photo_user
